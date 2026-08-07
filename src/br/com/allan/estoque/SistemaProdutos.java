@@ -1,3 +1,6 @@
+package br.com.allan.estoque;
+
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,13 +17,14 @@ public class SistemaProdutos {
                 produtos.add(new Produto("Caderno", 15.50));
                 produtos.add(new Produto("Caneta", 2));
 
-                while (opcao != 5) {
+                while (opcao != 6) {
                     System.out.println("\n ===== MENU =====");
                     System.out.println("1 - Cadastrar Produto");
                     System.out.println("2 - Listar Produtos");
                     System.out.println("3 - Buscar Produto");
                     System.out.println("4 - Excluir Produto");
-                    System.out.println("5 - Sair");
+                    System.out.println("5 - Editar Produto");
+                    System.out.println("6 - Sair");
 
                     opcao = scanner.nextInt();
                     scanner.nextLine();
@@ -33,6 +37,7 @@ public class SistemaProdutos {
                             String nome = scanner.nextLine();
                             System.out.println("Digite o preço do produto:");
                             double preco = scanner.nextDouble();
+                            scanner.nextLine();
 
                             produtos.add(new Produto(nome, preco));
                             System.out.println("Produto cadastrado com sucesso.");
@@ -41,12 +46,15 @@ public class SistemaProdutos {
                         case 2:
                             if (produtos.isEmpty()){
                                 System.out.println("Nenhum produto cadastrado");
+                                break;
                             } else {
                                 System.out.println("\n--- LISTA DE PRODUTOS ---");
-                                for (int i = 0; i < produtos.size(); i++){
+                                for (int i = 0; i < produtos.size(); i++) {
                                     Produto p = produtos.get(i);
                                     System.out.println((i + 1) + ". " + p.nome + " - R$ " + p.preco);
-                                } break;
+                                    ;
+                                }
+                                break;
                             }
 
                         case 3:
@@ -66,13 +74,14 @@ public class SistemaProdutos {
                             }
                             break;
 
+
                         case 4:
                             System.out.println("Digite o nome do produto para excluir: ");
                             String excluir = scanner.nextLine();
                             boolean removido = false;
 
                             for (int i = 0; i < produtos.size(); i++){
-                                if (produtos.get(i).nome.equalsIgnoreCase(excluir)){
+                                if (produtos.get(i).nome.equalsIgnoreCase(excluir)) {
                                     produtos.remove(i);
                                     System.out.println("Produto excluído com sucesso!");
                                     removido = true;
@@ -85,11 +94,44 @@ public class SistemaProdutos {
                             break;
 
                         case 5:
+                            System.out.println("Digite o nome do Produto que deseja Editar.");
+                            String editar = scanner.nextLine();
+                            boolean editado = false;
+
+
+                            for (int i = 0; i < produtos.size(); i++) {
+                                if (produtos.get(i).nome.equalsIgnoreCase(editar)) {
+
+                                    System.out.println("Produto encontrado.");
+                                    System.out.println("Qual o novo nome para este produto?");
+                                    String nomeEdicao = scanner.nextLine();
+                                    System.out.println("Qual o novo preço para este produto?");
+                                    double precoEdicao = scanner.nextDouble();
+                                    scanner.nextLine();
+
+                                    Produto p = produtos.get(i);
+
+                                    p.setNome(nomeEdicao);
+                                    p.setPreco(precoEdicao);
+
+                                    System.out.println("Produtos atualizado:");
+                                    System.out.println("Novo nome: " + nomeEdicao);
+                                    System.out.println("Novo preço " + precoEdicao);
+                                    editado = true;
+                                }
+
+                            }
+                                if (!editado){
+                                    System.out.println("Produto não encontrado/editado.");
+                            }
+                            break;
+
+                        case 6:
                             System.out.println("Saindo do sistema.até logo!");
                             break;
                     default:
                         System.out.println("opção inválida! Tente novamente.");
-
+                        break;
                 }
             }
         }
