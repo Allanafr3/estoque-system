@@ -47,8 +47,8 @@ src
 
 
 🔮 Próximas melhorias
+Aplicar arquitetura em camadas (Controller, Service e Repository)
 Implementar banco de dados
 Criar API REST com Spring Boot
 Implementar autenticação de usuários
 Criar interface web
-Aplicar arquitetura em camadas (Controller, Service e Repository)
