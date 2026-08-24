@@ -1,5 +1,7 @@
 package br.com.allan.estoque;
 
+import br.com.allan.estoque.model.Produto;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -7,7 +9,7 @@ import java.util.Scanner;
 
 public class SistemaProdutos {
 
-             private List<Produto> produtos = new ArrayList<>();
+            // private List<Produto> produtos = new ArrayList<>();
              private Scanner scanner = new Scanner(System.in);
 
             public void iniciar() {

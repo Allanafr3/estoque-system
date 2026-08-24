@@ -1,6 +1,6 @@
-package br.com.allan.estoque;
+package br.com.allan.estoque.model;
 
-class Produto {
+public class Produto {
     String nome;
     double preco;
 
