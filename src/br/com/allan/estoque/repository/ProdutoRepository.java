@@ -8,4 +8,5 @@ public interface ProdutoRepository {
     List<Produto> listarTodos();
     Produto buscarPorNome(String nome);
     boolean excluir (String nome);
+    Produto editar(String nome);
 }
