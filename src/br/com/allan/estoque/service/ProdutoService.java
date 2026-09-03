@@ -68,38 +68,3 @@ public class ProdutoService {
 
     }
 }
-
-/*   private void editar(){
-                    System.out.println("Digite o nome do Produto que deseja Editar.");
-                    String editar = scanner.nextLine();
-                    boolean editado = false;
-
-
-                    for (int i = 0; i < produtos.size(); i++) {
-                        if (produtos.get(i).nome.equalsIgnoreCase(editar)) {
-
-                            System.out.println("Produto encontrado.");
-                            System.out.println("Qual o novo nome para este produto?");
-                            String nomeEdicao = scanner.nextLine();
-                            System.out.println("Qual o novo preço para este produto?");
-                            double precoEdicao = scanner.nextDouble();
-                            scanner.nextLine();
-
-                            Produto p = produtos.get(i);
-
-                            p.setNome(nomeEdicao);
-                            p.setPreco(precoEdicao);
-
-                            System.out.println("Produtos atualizado:");
-                            System.out.println("Novo nome: " + nomeEdicao);
-                            System.out.println("Novo preço " + precoEdicao);
-                            editado = true;
-                            break;
-                        }
-
-                    }
-                    if (!editado){
-                        System.out.println("Produto não encontrado/editado.");
-                    }
-                }*/
-

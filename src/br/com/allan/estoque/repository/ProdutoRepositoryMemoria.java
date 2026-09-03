@@ -40,14 +40,4 @@ public class ProdutoRepositoryMemoria implements ProdutoRepository {
         }
         return false;
     }
-
-    @Override
-    public Produto editar(String nome) {
-        for (int i = 0; i < produtos.size(); i++) {
-            if (produtos.get(i).getNome().equalsIgnoreCase(nome)) {
-                return produtos.get(i);
-            }
-        }
-        return null;
-    }
 }
