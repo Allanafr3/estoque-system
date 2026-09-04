@@ -1,8 +1,9 @@
 package br.com.allan.estoque.model;
 
 public class Produto {
-    String nome;
-    double preco;
+   private String nome;
+   private double preco;
+   private int id;
 
     public Produto(String nome, double preco) {
         this.nome = nome;
@@ -25,5 +26,12 @@ public class Produto {
         this.preco = preco;
     }
 
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
 
 }

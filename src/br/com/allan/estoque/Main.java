@@ -5,12 +5,13 @@ import java.util.Scanner;
 import br.com.allan.estoque.model.Produto;
 import br.com.allan.estoque.repository.ProdutoRepository;
 import br.com.allan.estoque.repository.ProdutoRepositoryMemoria;
+import br.com.allan.estoque.repository.ProdutoRepositoryMySQL;
 import br.com.allan.estoque.service.ProdutoService;
 
 public class Main {
     public static void main(String[] args) {
 
-        ProdutoRepository pr = new ProdutoRepositoryMemoria();
+        ProdutoRepository pr = new ProdutoRepositoryMySQL();
         ProdutoService ps = new ProdutoService(pr);
 
         Scanner scanner = new Scanner(System.in);
