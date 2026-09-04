@@ -4,7 +4,7 @@ Sistema de gerenciamento de estoque desenvolvido em Java com o objetivo de prati
 
 ## 🚀 Sobre o projeto
 
-O Estoque System é uma aplicação simples para controle de produtos, permitindo cadastrar, listar e gerenciar informações de estoque.
+O Estoque System é uma aplicação simples para controle de produtos, permitindo cadastrar, listar, excluir, editar e gerenciar informações de estoque.
 
 O projeto foi desenvolvido para aplicar conceitos fundamentais do desenvolvimento back-end utilizando Java.
 
@@ -14,6 +14,7 @@ O projeto foi desenvolvido para aplicar conceitos fundamentais do desenvolviment
 - Programação Orientada a Objetos (POO)
 - IntelliJ IDEA
 - Git e GitHub
+- MySQL
 
 ## 📚 Conceitos aplicados
 
@@ -24,6 +25,7 @@ O projeto foi desenvolvido para aplicar conceitos fundamentais do desenvolviment
 - ArrayList
 - Interfaces
 - Organização de pacotes
+- JDBC e MAVEN
 
 ## ⚙️ Funcionalidades
 
@@ -31,7 +33,9 @@ Atualmente o sistema possui:
 
 ✅ Cadastro de produtos  
 ✅ Listagem de produtos  
-✅ Controle de quantidade em estoque  
+✅ Edição de produtos
+✅ Exclusão de produtos
+✅ Ações salvas no MySQL
 ✅ Estrutura organizada em pacotes Java
 
 ## 📂 Estrutura do projeto
@@ -41,14 +45,30 @@ src
 └── com
 └── allan
 └── estoque
-├── Main.java
-├── Produto.java
-└── SistemaProdutos.java
+└── Main
+
+model
+└── Produto
+
+Repository
+└── ConexaoMySQL
+└── ProdutoRepository
+└── ProdutoRepositoryMemoria
+└── ProdutoRepositoryMySQL
+
+Service
+└── ProdutoService
 
 
-🔮 Próximas melhorias
-Aplicar arquitetura em camadas (Controller, Service e Repository)
-Implementar banco de dados
+
+
+
+🔮 Próximas melhorias:
 Criar API REST com Spring Boot
 Implementar autenticação de usuários
 Criar interface web
+
+Melhorias Finalizadas: 
+Aplicar arquitetura em camadas (Controller, Service e Repository) ✅
+Implementar banco de dados ✅
+
